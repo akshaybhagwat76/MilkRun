@@ -1,0 +1,26 @@
+﻿.kit-ldgcnt {
+    position: relative;
+}
+
+.kit-loading {
+    position: absolute;
+    z-index: 1;
+}
+
+    .kit-loading span {
+        background-image: url('loading.gif');
+        width: 16px;
+        height: 11px;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        display: block
+    }
+
+.kit-field .kit-loading, .kit-list .kit-loading {
+    margin: 10px 0 0 10px;
+}
+
+.kit-center {
+   
+}

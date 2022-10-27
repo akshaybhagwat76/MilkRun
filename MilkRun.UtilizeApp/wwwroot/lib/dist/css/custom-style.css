@@ -1,0 +1,120 @@
+.login-page-body {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.top-header {
+    background: #ed1b24;
+    padding: 0.2rem 1rem ;
+}
+ul.social-media-items{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+ul.social-media-items li{
+    display: inline-block;
+    margin-left: 0.5rem;
+
+}
+ul.social-media-items li:first-child{
+    margin-left: 0;
+}
+ul.social-media-items li a{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff70;
+    display: inherit;
+    text-align: center;
+    color: #fff;
+}
+ul.social-media-items.info li a{
+    width: auto;
+    height: auto;
+    line-height: auto;
+    background-color: transparent;
+}
+
+.main-header-area {
+    background: #fff;
+    padding: 0.3rem 1rem;
+}
+.main-header-area .brand-logo img{
+    width: 250px;
+}
+.login-area01{
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-footer {
+    background: #3360aa;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.2rem;
+}
+.login-card-area{
+    border-radius: 6px;
+}
+.login-card-area .card-body{
+    border-radius: 6px !important;
+}
+
+
+.user-icon {
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: #3360aa;
+    margin-top: -35px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 6px solid #ffffff;
+    box-shadow: -1px 5px 0px #e9ecef;
+    margin-bottom: 10px;
+}
+
+.brand-logo a.brand-image{
+    max-height: none !important;
+    width: 100px;
+}
+.brand-logo.brand-link{
+    padding: 0.3rem 0.5rem;
+}
+.brand-logo.brand-link .brand-image{
+    max-height: none;
+    height: 50px;
+}
+
+
+
+
+label#lblError {
+    display: block;
+    text-align: center;
+}
+
+/* Validation */
+label.adderror {
+    color: #cc5965;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+input.adderror, textarea.adderror, select.adderror, div.adderror {
+    border: 2px dotted #cc5965;
+}

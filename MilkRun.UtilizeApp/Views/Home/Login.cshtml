@@ -1,0 +1,91 @@
+﻿@{
+    //ViewData["Title"] = "Log in";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-box login-area01">
+    <!-- /.login-logo -->
+    <div class="card login-card-area">
+        <div class="user-icon">
+            <!-- <img src="" /> -->
+            <div><i class="fas fa-user-tie"></i></div>
+        </div>
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            <form id="myForm">
+                <div class="form-group mb-3">
+                    <input type="text" id="Username" class="form-control required" placeholder="Email" />
+                </div>
+                <div class="form-group mb-3">
+                    <input type="password" id="Password" class="form-control required" placeholder="Password" />
+                </div>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="button" onclick="login()" id="btn-submit" class="btn btn-primary btn-block">Sign In</button>
+                    </div>
+                    <div class="col-8">
+                        <label id="lblError"></label>
+
+
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".navbar-fixed-top").hide();
+        $('form').each(function () {
+            $(this).find('input').keypress(function (e) {
+                // Enter pressed?
+                if (e.which == 10 || e.which == 13) {
+                    login();
+                }
+            });
+        });
+
+    })
+    function login() {
+        $("#lblError").removeClass("success").removeClass("error").text('');
+   
+        $("#lblError").removeClass("success").removeClass("adderror").text('');
+        var retval = true;
+        $("#myForm .required").each(function () {
+            if (!$(this).val()) {
+                $(this).addClass("adderror");
+                retval = false;
+            }
+            else {
+                $(this).removeClass("adderror");
+            }
+        });
+        var email = $("#Username").val().trim();
+        var password = $("#Password").val().trim();
+        if (retval) {
+            var data = {
+                Email: email,
+                Password: password
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Home/SignIn",
+                data: { loginDetails: data },
+                success: function (data) {
+                    if (data == "LoggedIn") {
+                        location.href = '/Home/PackagingPart?currentPageIndex=1'
+                    }
+                    else {
+                        $("#lblError").addClass("adderror").text(data).show();
+
+                    }
+                }
+            });
+        }
+
+    }
+</script>
